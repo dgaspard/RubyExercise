@@ -1,0 +1,21 @@
+<h1>Article listing Page</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% @marticles.each do |marticle| %>
+        <tr>
+            <td><%= marticle.id %></td>
+            <td><%= marticle.mtitle %></td>
+            <td><%= marticle.mdescription %></td>
+            <td>Placeholder</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
