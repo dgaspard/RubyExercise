@@ -1,3 +1,8 @@
 <h1>Showing Marticles</h1>
 <p><strong> Title: </strong><%= @marticle.mtitle %></p>
-<p><strong> Description: </strong><%= @marticle.mdescription %></p>
+<p><strong> Description: </strong><%= @marticle.mdescription %></p
+
+
+<%= link_to 'Edit', edit_marticle_path(@marticle) %> |
+<%= link_to 'Delete', marticle_path(@marticle), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %> |
+<%= link_to 'Return to marticles listing', marticles_path %> | 

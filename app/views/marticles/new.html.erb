@@ -1,28 +1,5 @@
 <h1>Create a New Marticle</h1>
 
-<% if @marticle.errors.any? %>
-    <h2>The following errors prevented the article from being saved.</h2>
-    <ul>
-    <% @marticle.errors.full_messages.each do |msg| %>
-       </li><%= msg %></li><br />
-    <% end %>
-    </ul>
-<% else %>
-    <p>title = <%= @marticle.mtitle %>
-<% end %>
+<%= render 'form' %>
 
-<%= form_with scope: :marticle, url: marticles_path, local: true do |f| %>
-
-<p>
-    <%= f.label :Title %><br />
-    <%= f.text_field :mtitle %>
-</p>
-
-<p> <%= f.label :Description %><br />
-    <%= f.text_area :mdescription %>
-</p>
-
-<p>
-    <%= f.submit %>
-</p>
-<% end %>
+<%= link_to 'Return to marticles listing', marticles_path %> | 

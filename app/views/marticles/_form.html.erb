@@ -1,0 +1,26 @@
+<% if @marticle.errors.any? %>
+    <h2>The following errors prevented the article from being saved.</h2>
+    <ul>
+    <% @marticle.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% else %>
+    <p>title = <%= @marticle.mtitle %>
+<% end %>
+
+<%= form_with(model: @marticle, local: true) do |f| %>
+
+<p>
+    <%= f.label :Title %><br />
+    <%= f.text_field :mtitle %>
+</p>
+
+<p> <%= f.label :Description %><br />
+    <%= f.text_area :mdescription %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+<% end %>

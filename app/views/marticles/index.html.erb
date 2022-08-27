@@ -6,6 +6,7 @@
         <th>ID</th>
         <th>Title</th>
         <th>Description</th>
+        <th colspan = "3">Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -14,8 +15,13 @@
             <td><%= marticle.id %></td>
             <td><%= marticle.mtitle %></td>
             <td><%= marticle.mdescription %></td>
-            <td>Placeholder</td>
+            <td><%= link_to 'Show', marticle_path(marticle) %></td> 
+            <td><%= link_to 'Edit', edit_marticle_path(marticle) %></td> 
+            <td><%= link_to 'Delete', marticle_path(marticle), data: {turbo_method: :delete} %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
+<p>
+    <%= link_to 'Create a new article', new_marticle_path %>
+</p>
